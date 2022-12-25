@@ -1,0 +1,67 @@
+{
+  "name": "docsify-plugin-advance-blockquote",
+  "version": "1.0.1",
+  "description": "docsify plugin",
+  "author": "Qt",
+  "license": "MIT",
+  "keywords": [
+    "docsify",
+    "plugin",
+    "blockquote",
+    "blockquotes",
+    "hint"
+  ],
+  "files": [
+    "/dist",
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "dist/index.js",
+  "unpkg": "dist/index.min.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "build": "rollup -c rollup.config.js",
+    "prepare": "npm run clean && npm run build",
+    "pub": "npm publish --access=public --registry=https://registry.npmjs.org/",
+    "pub:x": "npm run x && npm run pub",
+    "pub:y": "npm run y && npm run pub",
+    "pub:z": "npm run z && npm run pub",
+    "x": "npm --no-git-tag-version version major",
+    "y": "npm --no-git-tag-version version minor",
+    "z": "npm --no-git-tag-version version patch",
+    "link": "npm link",
+    "unlink": "npm unlink",
+    "lint": "eslint src",
+    "fix": "npm run lint --fix"
+  },
+  "jest": {
+    "preset": "rollup-jest"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-url": "^5.0.1",
+    "autoprefixer": "^8.2.0",
+    "eslint": "^8.8.0",
+    "lodash.merge": "^4.6.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.2.4",
+    "rollup-plugin-postcss": "^2.9.0",
+    "rollup-plugin-scss": "^2.6.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-plugin-url": "^2.2.4"
+  }
+}

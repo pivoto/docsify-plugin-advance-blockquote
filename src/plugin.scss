@@ -1,0 +1,95 @@
+.alert {
+	display: block;
+	position: relative;
+	word-wrap: break-word;
+	word-break: break-word;
+	padding: .75rem 1.25rem;
+	margin-bottom: 1rem;
+
+	& > * {
+		max-width: 100%;
+	}
+
+	& + .alert {
+		margin-top: -.25rem;
+	}
+
+	p {
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+	}
+
+	i {
+		margin-right: .5rem;
+	}
+
+	.title {
+		font-weight: 600;
+		margin: 0;
+	}
+
+	& > :first-child {
+		margin-top: 0;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+$callout: (
+	tag: (color: #15dd1b),
+	tip: (color: #28a745),
+	info: (color: #19a2e8),
+	question: (color: #2e75f5),
+	warning: (color: #f0ad4e),
+	danger: (color: #dc3545),
+);
+
+$flat: (
+	tag:(color:#285b2a, background:#d7fddf, border:#d7fddf, title:#18381a),
+	tip:(color:#285b2a, background:#b1f7b5, border:#b1f7b5, title:#18381a),
+	question:(color:#025378, background:#70bcf6, border:#70bcf6, title:#013349),
+	info:(color:#02587f, background:#a5ddf7, border:#a5ddf7, title:#01354d),
+	warning:(color:#852d12, background:#f7dba1, border:#f7dba1, title:#581e0c),
+	danger:(color:#7f231c, background:#f79b9b, border:#f79b9b, title:#551713),
+);
+
+.alert.callout {
+	border: 1px solid #eee;
+	border-left-width: .25rem;
+	border-radius: .25rem;
+	background: #FFF;
+
+	@each $type, $style in $callout {
+		&.#{$type} {
+			border-left-color: map-get($style, color) !important;
+
+			.title {
+				color: map-get($style, color);
+			}
+		}
+	}
+}
+
+.alert.flat {
+	border: 1px solid transparent;
+	border-radius: .125rem;
+
+	color: #383d41;
+	background-color: #e2e3e5;
+	border-color: #d6d8db;
+
+
+	@each $type, $style in $flat {
+		&.#{$type} {
+			color: map-get($style, color);
+			background-color: map-get($style, background);
+			border-color: map-get($style, border);
+
+			.title {
+				color: map-get($style, title);
+			}
+		}
+	}
+}
