@@ -1,6 +1,6 @@
 {
   "name": "docsify-plugin-advance-blockquote",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "docsify plugin",
   "author": "Qt",
   "license": "MIT",
@@ -62,6 +62,7 @@
     "rollup-plugin-postcss": "^2.9.0",
     "rollup-plugin-scss": "^2.6.0",
     "rollup-plugin-uglify": "^6.0.4",
-    "rollup-plugin-url": "^2.2.4"
+    "rollup-plugin-url": "^2.2.4",
+    "sass": "^1.57.1"
   }
 }
